@@ -1,0 +1,18 @@
+# This file is a "template" of what your config.yml.$ENVIRONMENT file should look like
+config:
+    api:
+        name: ZXVenturesCodeChallenge
+        version: v1
+        ssl: false
+    cache:
+        -
+            http_cache.cache_dir: ./storage/cache/
+    logger:
+        debug: true
+        level: 100
+        log_file: /var/log/app.log
+    db:
+        server: 'mongodb://mongo:27017'
+        user: root
+        password: root
+        database: code-challenge

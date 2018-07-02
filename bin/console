@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Console script.
+ *
+ * Run it by using "php bin/console".
+ */
+
+error_reporting(E_ALL);
+@ini_set('display_errors', 1);
+
+//error_reporting(0);
+//@ini_set('display_errors', 0);
+
+set_time_limit(0);
+
+$bootstrapFilePath = __DIR__.'/../src/cli.php';
+
+/**
+ * @var $app Silex\Application
+ */
+$app = require $bootstrapFilePath;
+
+if (!$app instanceof Silex\Application) {
+    throw new LogicException(sprintf('The bootstrap file %s must return an instance of Silex\Application.', $bootstrapFilePath));
+}
+
+if (!isset($app['console'])) {
+    throw new LogicException('The console service does not exist. Did you forget to register Knp\Provider\ConsoleServiceProvider ?');
+}
+
+/**
+ * @var $console Symfony\Component\Console\Application
+ */
+$console = $app['console'];
+
+$console->add(new \ZXVentures\CodeChallenge\Commands\DatabaseImportCommand());
+
+$console->run();

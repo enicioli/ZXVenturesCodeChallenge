@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Emacs
+*~
+
+# Visual Studio Code
+.vscode/
+
+# IntelliJ
+.idea
+/out/
+.idea_modules/
+
+# Composer
+/vendor
+
+# Tests reports
+tests/_reports
+
+# Config
+resources/config/config.yml
+
+# Cache
+/storage

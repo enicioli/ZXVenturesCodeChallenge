@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "eebe09ff-4dce-4e76-971c-d82027b8453b",
+		"name": "ZXVenturesCodeChallengeBackend-php",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PDV",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": {\n        \"coordinates\": [\n            -43.297337,\n            -23.013538\n        ],\n        \"type\": \"Point\"\n    },\n    \"coverageArea\": {\n        \"coordinates\": [\n            [\n                [\n                    [\n                        -43.36556,\n                        -22.99669\n                    ],\n                    [\n                        -43.36539,\n                        -23.01928\n                    ],\n                    [\n                        -43.26583,\n                        -23.01802\n                    ],\n                    [\n                        -43.25724,\n                        -23.00649\n                    ],\n                    [\n                        -43.23355,\n                        -23.00127\n                    ],\n                    [\n                        -43.2381,\n                        -22.99716\n                    ],\n                    [\n                        -43.23866,\n                        -22.99649\n                    ],\n                    [\n                        -43.24063,\n                        -22.99756\n                    ],\n                    [\n                        -43.24634,\n                        -22.99736\n                    ],\n                    [\n                        -43.24677,\n                        -22.99606\n                    ],\n                    [\n                        -43.24067,\n                        -22.99381\n                    ],\n                    [\n                        -43.24886,\n                        -22.99121\n                    ],\n                    [\n                        -43.25617,\n                        -22.99456\n                    ],\n                    [\n                        -43.25625,\n                        -22.99203\n                    ],\n                    [\n                        -43.25346,\n                        -22.99065\n                    ],\n                    [\n                        -43.29599,\n                        -22.98283\n                    ],\n                    [\n                        -43.3262,\n                        -22.96481\n                    ],\n                    [\n                        -43.33427,\n                        -22.96402\n                    ],\n                    [\n                        -43.33616,\n                        -22.96829\n                    ],\n                    [\n                        -43.342,\n                        -22.98157\n                    ],\n                    [\n                        -43.34817,\n                        -22.97967\n                    ],\n                    [\n                        -43.35142,\n                        -22.98062\n                    ],\n                    [\n                        -43.3573,\n                        -22.98084\n                    ],\n                    [\n                        -43.36522,\n                        -22.98032\n                    ],\n                    [\n                        -43.36696,\n                        -22.98422\n                    ],\n                    [\n                        -43.36717,\n                        -22.98855\n                    ],\n                    [\n                        -43.36636,\n                        -22.99351\n                    ],\n                    [\n                        -43.36556,\n                        -22.99669\n                    ]\n                ]\n            ]\n        ],\n        \"type\": \"MultiPolygon\"\n    },\n    \"document\": \"07.526.557/0001-00\",\n    \"ownerName\": \"test ownerName\",\n    \"tradingName\": \"test tradingName\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/pdv",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pdv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PDV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/pdv/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pdv",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PDV for position",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/pdv/covers?lng=-38.561737&lat=-3.736494",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pdv",
+						"covers"
+					],
+					"query": [
+						{
+							"key": "lng",
+							"value": "-38.561737"
+						},
+						{
+							"key": "lat",
+							"value": "-3.736494"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
