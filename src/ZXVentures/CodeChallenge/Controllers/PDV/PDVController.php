@@ -26,7 +26,7 @@ class PDVController extends AbstractController
             $jsonBodyAsArray = json_decode($request->getContent(), true);
             $pdv = $this->PDVService->createPDV($jsonBodyAsArray);
 
-            return $this->responseCreated(['id' => $pdv->getId(), 'message' => 'Created']);
+            return $this->responseCreated($pdv->toArray());
         } catch (\Exception $e) {
             $message = $e->getMessage();
             $this->logger->error($message);

@@ -54,7 +54,9 @@ abstract class AbstractDocument
      */
     public function fromArray(DocumentManager $dm, array $data = [])
     {
-        $dm->getHydratorFactory()->hydrate($this, $data);
+        if ($dm->getHydratorFactory()) {
+            $dm->getHydratorFactory()->hydrate($this, $data);
+        }
 
         return $this;
     }
